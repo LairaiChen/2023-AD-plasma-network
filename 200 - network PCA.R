@@ -18,7 +18,7 @@ efficiency.data <- read_csv(path.df.cross.sectional) %>%
 
 # Gets regional measures in blood-marker related ROIs
 #	matrix; Data matrix (each row is an observation, each column is a variable)
-pc.parallel <- psych::fa.parallel(efficiency.data %>% select(-id), fa='pc', n.iter=1000, show.legend=FALSE)
+pc.parallel <- psych::fa.parallel(efficiency.data %>% select(-id), fa='pc', n.iter=10000, show.legend=FALSE)
 df.parallel <- 
   tibble(
     x = 1:length(pc.parallel$fa.values),
